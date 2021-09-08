@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Cut branch
         run: |
-          git checkout main
-          git branch -D prod
+          git checkout main || true
+          git branch -D prod || true
           git checkout -b prod
           git push
