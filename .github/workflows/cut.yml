@@ -10,6 +10,7 @@ jobs:
       - name: Cut branch
         run: |
           git checkout main || true
+          git pull origin prod || true
           git branch -D prod || true
           git checkout -b prod
           git push --set-upstream origin prod
