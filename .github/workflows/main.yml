@@ -1,0 +1,15 @@
+name: Cut Prod Branch
+
+on: [workflow_dispatch]
+
+jobs:
+  cut:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cut branch
+        run: |
+          git checkout main
+          git branch -D prod
+          git checkout -b prod
+          git push
