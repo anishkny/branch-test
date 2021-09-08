@@ -12,4 +12,4 @@ jobs:
           git checkout main || true
           git branch -D prod || true
           git checkout -b prod
-          git push
+          git push --set-upstream origin prod
