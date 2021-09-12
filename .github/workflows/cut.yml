@@ -10,7 +10,7 @@ jobs:
       - name: Cut branch
         run: |
           git checkout main || true
+          git tag $(date -u +'release-%Y-%m-%d-T%H-%M-%SZ')
           git branch -D prod || true
           git checkout -b prod
-          git tag $(date -u +'release-%Y-%m-%d-T%H-%M-%SZ')
           git push --force --tags --set-upstream origin +prod
